@@ -1,0 +1,33 @@
+* CI/CD with Go
+Sample Go web app for exploring CI/CD platforms.
+
+* Deployment
+The following environment variables must be present when executing the
+=cicd= scripts:
+- =BUILD_NUMBER=
+
+The following environment variables must be present when running the
+application:
+- =APP_ENV=
+
+** The CI/CD Pipeline
+1. =cicd-build.sh=
+2. =cicd-test.sh=
+3. =cicd-deploy.sh=
+
+* Development
+The =Makefile= serves as the entry-point for running and testing the
+app during development.
+
+** Examples
+#+BEGIN_SRC text
+$ make start
+go run -ldflags='-X "main.Port=4242" -X "main.BuildInfo=dev"' -race .
+2020/06/02 12:50:00 [INFO] Starting server on port 4242
+#+END_SRC
+
+#+BEGIN_SRC text
+$ make cover
+go test -coverprofile coverage.out ./... && go tool cover -html coverage.out
+ok      github.com/anschwa/cicd-go-app	0.003s	coverage: 55.6% of statements
+#+END_SRC
