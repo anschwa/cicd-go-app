@@ -10,6 +10,8 @@ blocks:
       jobs:
         - name: Build
           commands:
+            - pwd
+            - ls -laph
             - chmod +x cicd-build.sh
             - ./cicd-build.sh
         - name: Test
