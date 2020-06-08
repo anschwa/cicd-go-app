@@ -3,6 +3,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+BUILD_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
+
 app="cicd-go-app"
 build_number=$(printf %03d "$BUILD_NUMBER")
 branch=$(git rev-parse --abbrev-ref HEAD)

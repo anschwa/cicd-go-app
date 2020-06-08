@@ -3,6 +3,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+BUILD_NUMBER="$SEMAPHORE_WORKFLOW_NUMBER"
+
 app="cicd-go-app"
 
 docker build \
