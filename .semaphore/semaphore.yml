@@ -11,11 +11,9 @@ blocks:
           commands:
             - checkout
             - cache list
-            # - cache restore cicd-go-app:master
             - chmod +x cicd-build.sh
             - ./cicd-build.sh
-            - cache store cicd-go-app:master
-        - name: Test
+            - name: Test
           commands:
             - checkout
             - chmod +x cicd-test.sh
