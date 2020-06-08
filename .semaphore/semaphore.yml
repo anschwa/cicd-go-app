@@ -1,9 +1,12 @@
 version: v1.0
-name: Parallel
+name: cicd-go-app
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu1804
+global_job_config:
+  env_vars:
+    - name: BUILD_NUMBER
+      value: SEMAPHORE_WORKFLOW_NUMBER
 blocks:
   - name: 'Block #1'
     task:
@@ -11,8 +14,6 @@ blocks:
         - name: Build
           commands:
             - checkout
-            - pwd
-            - ls -laph
             - chmod +x cicd-build.sh
             - ./cicd-build.sh
         - name: Test
