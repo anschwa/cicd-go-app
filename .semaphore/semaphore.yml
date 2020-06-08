@@ -10,8 +10,12 @@ blocks:
         - name: Build
           commands:
             - checkout
+            - cache list
+            - cache has_key cicd-go-app:master
+            - cache restore cicd-go-app:master
             - chmod +x cicd-build.sh
             - ./cicd-build.sh
+            - cache store cicd-go-app:master
         - name: Test
           commands:
             - checkout
