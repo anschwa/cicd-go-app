@@ -3,6 +3,7 @@ name: cicd-go-app
 agent:
   machine:
     type: e1-standard-2
+    os_image: ubuntu1804
 blocks:
   - name: 'Block #1'
     task:
@@ -12,9 +13,11 @@ blocks:
             - checkout
             - chmod +x cicd-build.sh
             - ./cicd-build.sh
-
         - name: Test
           commands:
             - checkout
             - chmod +x cicd-test.sh
             - ./cicd-test.sh
+promotions:
+  - name: Promotion 1
+    pipeline_file: pipeline_2.yml
