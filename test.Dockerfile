@@ -6,7 +6,7 @@ WORKDIR "/opt/app"
 
 COPY . .
 
-echo "Running tests..."
+RUN echo "Running tests..."
 RUN make -e BUILD_NUMBER="$BUILD_NUMBER" test
 
-echo "Done."
+RUN echo "Done."
