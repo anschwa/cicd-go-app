@@ -8,7 +8,7 @@ blocks:
           commands:
             - checkout
             - chmod +x cicd-deploy.sh
-            - ./cicd-delpoy.sh
+            - ./cicd-deploy.sh
 agent:
   machine:
     type: e1-standard-2
