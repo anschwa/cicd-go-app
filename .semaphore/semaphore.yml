@@ -6,7 +6,7 @@ agent:
 global_job_config:
   env_vars:
     - name: BUILD_NUMBER
-      value: SEMAPHORE_WORKFLOW_NUMBER
+      value: ${SEMAPHORE_WORKFLOW_NUMBER}
 blocks:
   - name: 'Block #1'
     task:
