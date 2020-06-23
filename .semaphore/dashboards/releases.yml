@@ -1,0 +1,15 @@
+apiVersion: v1alpha
+kind: Dashboard
+metadata:
+  name: releases
+  title: Releases
+  id: 534fef03-c2b1-47fd-8c7b-a902cd8e3682
+  create_time: "1592931447"
+  update_time: "1592931447"
+spec:
+  widgets:
+  - name: Pipelines
+    type: list_pipelines
+    filters:
+      project_id: 2bc9b26e-a0a1-4638-95ae-56cc38cfe991
+      pipeline_file: ./semaphoreci/pipeline_2.yml
