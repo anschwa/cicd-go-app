@@ -12,4 +12,5 @@ spec:
     type: list_pipelines
     filters:
       project_id: 2bc9b26e-a0a1-4638-95ae-56cc38cfe991
+      branch: master
       pipeline_file: ./semaphoreci/pipeline_2.yml
